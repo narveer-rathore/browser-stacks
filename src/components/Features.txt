@@ -1,0 +1,7 @@
+Device frame overlays
+Network throttling
+Device orientation simulation
+Touch event simulation
+Screenshot capability
+Network request monitoring
+Console log aggregation

@@ -1,0 +1,51 @@
+.navigation-controls {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  background: #f5f5f5;
+  border-radius: 4px;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.nav-buttons button {
+  padding: 8px 12px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.nav-buttons button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.url-form {
+  display: flex;
+  gap: 10px;
+  flex: 1;
+}
+
+.url-input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.load-button {
+  padding: 8px 16px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.load-button:hover {
+  background: #45a049;
+}

@@ -1,0 +1,67 @@
+.screenshot-all {
+  position: relative;
+}
+
+.screenshot-all-btn {
+  padding: 8px 16px;
+  background: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  min-width: 120px;
+  justify-content: center;
+}
+
+.screenshot-all-btn:hover:not(:disabled) {
+  background: #1976d2;
+}
+
+.screenshot-all-btn:disabled {
+  background: #bdbdbd;
+  cursor: not-allowed;
+}
+
+.screenshot-all-btn.capturing {
+  background: #1976d2;
+  animation: pulse 1.5s infinite;
+}
+
+.capture-progress {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.screenshot-all-error {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 8px;
+  padding: 8px;
+  background: #ffebee;
+  color: #d32f2f;
+  border-radius: 4px;
+  font-size: 12px;
+  z-index: 100;
+  white-space: nowrap;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.6;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
