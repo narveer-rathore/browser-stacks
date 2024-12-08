@@ -35,7 +35,7 @@ A professional Electron-based application for testing websites across multiple d
 ## Installation
 ```bash
 git clone https://github.com/narveer-rathore/browser-stacks.git
-cd responsive-device-viewer
+cd browser-stacks
 npm install
 npm start
 ```
