@@ -84,15 +84,8 @@ const DeviceManager = ({ devices, onUpdateDevices, scale, onScaleChange }) => {
 
   return (
     <div className="device-manager">
-      <div className="device-controls">
-        <button
-          className="manage-devices-btn"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? 'Close Device Manager' : 'Manage Devices'}
-        </button>
-
-        <div className="scale-control">
+      {/* <div className="device-controls"> */}
+      {/* <div className="scale-control">
           <label>Scale: </label>
           <input
             type="range"
@@ -103,10 +96,10 @@ const DeviceManager = ({ devices, onUpdateDevices, scale, onScaleChange }) => {
             onChange={(e) => onScaleChange(parseFloat(e.target.value))}
           />
           <span>{Math.round(scale * 100)}%</span>
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
 
-      {isOpen && (
+      {(
         <div className="device-manager-content">
           <div className="new-device-form">
             <h3>Add New Device</h3>

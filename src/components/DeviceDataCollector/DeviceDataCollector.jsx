@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { captureScreenshot } from '../utils/screenshot';
+import { captureScreenshot } from '../../utils/screenshot';
 import './DeviceDataCollector.css';
 
 const DeviceDataCollector = ({ webview, device }) => {
@@ -134,11 +134,7 @@ For support: your@email.com`;
         disabled={isCollecting || !webview}
         title="Download device data (Screenshot, Console, Network)"
       >
-        {isCollecting ? (
-          <span className="collecting-text">Collecting...</span>
-        ) : (
-          <span className="collect-text">📥 Download Data</span>
-        )}
+        <i className='fas fa-download'></i>
       </button>
 
       {error && (

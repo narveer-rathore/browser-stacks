@@ -52,7 +52,3 @@ export const deviceGroups = [
   { id: 'tablet', name: 'Tablets' },
   { id: 'desktop', name: 'Desktop' }
 ];
-
-export const getDefaultDevices = () => {
-  return Object.values(devicePresets).flat();
-};

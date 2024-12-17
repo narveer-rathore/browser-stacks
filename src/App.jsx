@@ -1,12 +1,11 @@
 import { useState, useRef, useCallback } from 'react';
 import { getInitialDevices, saveDevices } from './data/devices.js';
 import { formatUrl } from './utils/urlUtils.js';
-import DeviceView from './components/DeviceView.jsx';
-import DeviceManager from './components/DeviceManager.jsx';
-import NavigationControls from './components/NavigationControls.jsx';
-import CssInjector from './components/CssInjector.jsx';
-import ScreenshotAll from './components/ScreenshotAll.jsx';
+import DeviceView from './components/DeviceView/DeviceView';
+import NavigationControls from './components/NavigationControls/NavigationControls';
+import ScreenshotAll from './components/ScreenshotAll/ScreenshotAll';
 import './App.css';
+import Settings from './components/Settings/Settings.jsx';
 
 function App() {
   const [devices, setDevices] = useState(getInitialDevices);
@@ -16,6 +15,7 @@ function App() {
     return localStorage.getItem('custom-css') || '';
   });
   const deviceRefs = useRef([]);
+  const [showSetting, setShowSettings] = useState(false);
 
   const handleUrlChange = useCallback((url) => {
     const formattedUrl = formatUrl(url);
@@ -53,27 +53,18 @@ function App() {
   return (
     <div className="app">
       <div className="app-header">
-        <NavigationControls onUrlChange={handleUrlChange} />
-
-        <div className="controls-row">
-          <div className="left-controls">
-            <DeviceManager
-              devices={devices}
-              onUpdateDevices={handleUpdateDevices}
-              scale={scale}
-              onScaleChange={setScale}
-            />
-            <CssInjector
-              onInject={handleCssInject}
-              initialCss={customCss}
-            />
-          </div>
-
+        <NavigationControls onUrlChange={handleUrlChange}>
           <ScreenshotAll
             devices={devices}
             deviceRefs={deviceRefs}
           />
-        </div>
+          <button
+            className="manage-devices-btn"
+            onClick={() => setShowSettings(true)}
+          >
+            <i className={`fas fa-gear`}></i>
+          </button>
+        </NavigationControls>
       </div>
 
       <div className="devices-container">
@@ -93,6 +84,17 @@ function App() {
             />
           ))}
       </div>
+
+      {showSetting && <Settings
+        tab={showSetting}
+        onInject={handleCssInject}
+        initialCss={customCss}
+        devices={devices}
+        onUpdateDevices={handleUpdateDevices}
+        scale={scale}
+        setShowSettings={setShowSettings}
+        onScaleChange={setScale}
+      />}
     </div>
   );
 }

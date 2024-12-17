@@ -3,31 +3,29 @@
 }
 
 .collect-data-btn {
-  padding: 6px 12px;
-  background: #4caf50;
-  color: white;
+  background: transparent;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 14px;
-  min-width: 130px;
+  color: #666;
+  font-size: 20px;
+  padding: 3px 5px;
   justify-content: center;
 }
 
 .collect-data-btn:hover:not(:disabled) {
-  background: #43a047;
+  color: black;
 }
 
 .collect-data-btn:disabled {
-  background: #bdbdbd;
+  opacity: 0.6;
   cursor: not-allowed;
 }
 
 .collect-data-btn.collecting {
-  background: #43a047;
   animation: pulse 1.5s infinite;
 }
 

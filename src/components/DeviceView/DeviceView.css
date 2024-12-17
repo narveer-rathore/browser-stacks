@@ -7,9 +7,10 @@
 
 .device-header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   padding: 10px 15px;
+  gap: 8px;
+  flex-direction: column;
   border-bottom: 1px solid #eee;
   background: #f8f9fa;
 }
@@ -17,13 +18,17 @@
 .device-info {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 10px;
+  width: 100%;
 }
 
 .device-info h3 {
   margin: 0;
   font-size: 14px;
   color: #333;
+  gap: 6px;
+  display: flex;
 }
 
 .device-dimensions {
@@ -37,6 +42,10 @@
 .device-container {
   position: relative;
   transition: transform 0.3s ease;
+}
+
+.device-view:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
 }
 
 .device-container webview {
@@ -74,5 +83,22 @@
 .device-actions {
   display: flex;
   gap: 10px;
-  align-items: center;
+  flex: 1;
+  width: 100%;
+}
+
+.webview-url {
+  background-color: transparent;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 3px 6px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: auto;
+  flex: 1;
+}
+
+.tab-controls {
+  display: flex;
+  gap: 8px;
 }

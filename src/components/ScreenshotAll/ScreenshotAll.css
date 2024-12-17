@@ -3,32 +3,14 @@
 }
 
 .screenshot-all-btn {
-  padding: 8px 16px;
-  background: #2196f3;
-  color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 14px;
-  min-width: 120px;
+  font-size: 30px;
   justify-content: center;
-}
-
-.screenshot-all-btn:hover:not(:disabled) {
-  background: #1976d2;
-}
-
-.screenshot-all-btn:disabled {
-  background: #bdbdbd;
-  cursor: not-allowed;
-}
-
-.screenshot-all-btn.capturing {
-  background: #1976d2;
-  animation: pulse 1.5s infinite;
 }
 
 .capture-progress {

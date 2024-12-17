@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { captureScreenshot } from '../utils/screenshot';
+import { captureScreenshot } from '../../utils/screenshot';
 import './ScreenshotAll.css';
 
 const ScreenshotAll = ({ devices, deviceRefs }) => {
@@ -61,7 +61,7 @@ const ScreenshotAll = ({ devices, deviceRefs }) => {
   return (
     <div className="screenshot-all">
       <button
-        className={`screenshot-all-btn ${isCapturing ? 'capturing' : ''}`}
+        className={`manage-devices-btn ${isCapturing ? 'capturing' : ''}`}
         onClick={handleCaptureAll}
         disabled={isCapturing || enabledCount === 0}
         title={enabledCount === 0 ? 'No devices enabled' : `Capture all ${enabledCount} devices`}
@@ -71,7 +71,7 @@ const ScreenshotAll = ({ devices, deviceRefs }) => {
             Capturing... {Math.round(progress)}%
           </span>
         ) : (
-          <>📸 Capture All</>
+          <i className='fas fa-camera'></i>
         )}
       </button>
 

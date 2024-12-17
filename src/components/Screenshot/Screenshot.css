@@ -3,24 +3,24 @@
 }
 
 .screenshot-btn {
-  padding: 6px 12px;
-  background: #2196f3;
-  color: white;
+  background: transparent;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 14px;
+  color: #666;
+  padding: 3px 5px;
+  font-size: 20px;
 }
 
-.screenshot-btn:hover {
-  background: #1976d2;
+.screenshot-btn:hover:not(:disabled) {
+  color: black;
 }
 
 .screenshot-btn:disabled {
-  background: #bdbdbd;
+  opacity: 0.6;
   cursor: not-allowed;
 }
 
@@ -45,7 +45,7 @@
 .screenshot-preview {
   position: absolute;
   top: 100%;
-  left: 0;
+  right: 0;
   margin-top: 8px;
   padding: 4px;
   background: white;

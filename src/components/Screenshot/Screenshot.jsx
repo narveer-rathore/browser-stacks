@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { captureScreenshot, downloadScreenshot } from '../utils/screenshot';
+import { captureScreenshot, downloadScreenshot } from '../../utils/screenshot';
 import './Screenshot.css';
 
 const Screenshot = ({ webview, deviceName }) => {
@@ -26,6 +26,9 @@ const Screenshot = ({ webview, deviceName }) => {
     } finally {
       setIsCapturing(false);
     }
+    setTimeout(() => {
+      setPreview(null);
+    }, 5000)
   };
 
   return (
@@ -35,7 +38,7 @@ const Screenshot = ({ webview, deviceName }) => {
         onClick={handleCapture}
         disabled={isCapturing || !webview}
       >
-        {isCapturing ? 'Capturing...' : '📸 Screenshot'}
+        <i className='fas fa-camera'></i>
       </button>
 
       {error && (

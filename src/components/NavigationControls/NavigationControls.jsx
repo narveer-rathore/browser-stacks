@@ -1,7 +1,8 @@
-import { useUrlHistory } from '../hooks/useUrlHistory';
+import { useUrlHistory } from '../../hooks/useUrlHistory';
 import './NavigationControls.css';
+import { toggleSettings } from "../../utils/settings";
 
-const NavigationControls = ({ onUrlChange }) => {
+const NavigationControls = ({ onUrlChange, children }) => {
   const {
     history,
     canGoBack,
@@ -25,20 +26,23 @@ const NavigationControls = ({ onUrlChange }) => {
 
   return (
     <div className="navigation-controls">
+      <div className='logo'>
+        <img src='/assets/browserstacks-logo.jpg'></img>
+      </div>
       <div className="nav-buttons">
         <button
           onClick={() => handleNavigation('back')}
           disabled={!canGoBack}
           title="Go Back"
         >
-          ←
+          <i className='fas fa-arrow-left'></i>
         </button>
         <button
           onClick={() => handleNavigation('forward')}
           disabled={!canGoForward}
           title="Go Forward"
         >
-          →
+          <i className='fas fa-arrow-right'></i>
         </button>
       </div>
 
@@ -47,12 +51,13 @@ const NavigationControls = ({ onUrlChange }) => {
           type="text"
           name="url"
           list="url-history"
-          placeholder="Enter URL (e.g., example.com)"
+          placeholder="Enter URL (e.g., google.com)"
           className="url-input"
         />
         <button type="submit" className="load-button">
-          Load
+          <i className="fa-solid fa-globe"></i>
         </button>
+        {children}
       </form>
 
       <datalist id="url-history">

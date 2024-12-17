@@ -72,7 +72,7 @@ Each directory serves a specific purpose:
 - Find your screenshots in a convenient ZIP file
 
 ### 4. Data Collection
-- Click "Download Data" on any device to collect:
+- Click Download icon on any device to collect:
   - Current screenshot
   - Console logs
   - Network requests
